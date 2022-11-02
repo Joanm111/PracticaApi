@@ -83,19 +83,24 @@ namespace PracticaApi.Controllers
 
 
 
-
-
+        
         [HttpPost("Post")]
+
         public Telefono Post(Telefono telefono)
         {
-            using (var context = new TelefoniaContext())
+       
             {
-                context.Telefonos.Add(telefono);
-                context.SaveChanges();
-                return telefono;
+                using (var context = new TelefoniaContext())
+                {
+                    context.Telefonos.Add(telefono);
+                    context.SaveChanges();
+                    return telefono;
+                }
             }
+            
         }
 
+    
     }
 }
 
